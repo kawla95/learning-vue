@@ -6,13 +6,52 @@
     <title>Document</title>
     <!-- importing vue v3.0.2 -->
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .box {
+            /* 100 pixels top and bottom, 0 left and right */
+            padding: 100px 0; 
+            width: 400px; 
+            text-align: center;
+            background: #ddd;
+            margin: 20px; 
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <h1> Hello, Vue</h1>
     <!-- mounting app in the dom inside the below element, hence, the id of app -->
     <!-- now our view app controls anything inside the below div -->
  <div id="app">
-<h2> I am a template now </h2>
+    <!-- conditional rendering below: only show book if vue condtional rendering is false -->
+    <div v-if="showBooks">
+        <p> {{ title }} - {{ author }} - {{ age }}</p>
+    </div>
+    <button @click="toggleShowBooks">
+        <span v-if="showBooks">Hide books</span>
+        <!-- if show books is false, toggle show books button -->
+        <span v-if="!showBooks">Show books</span>
+        <!-- you could alternatively use v-else to do the opposite of your if-statement without needing to toggle your method -->
+        <!-- <span v-else>Show books</span> -->
+    </button>
+    <!-- v-show directive only shows when showBooks is true. instead of removing it from the dom, v-show changes css display:none. It's less time consuming and expensive, having to change the css instead of removing it from the dom altogether  -->
+    <div v-show="showBooks"> currently showing books</div>
+    
+    <!-- v-on: vue events -->
+<!-- :click - specifies the type of event -->
+<!-- "age": not in curly braces because age property is not being outputed to the browser like line 15  -->
+<button v-on:click="age++"> increase age  </button>
+<!-- @ is a shortcut for "v:on" -->
+<button @click="age--"> decrease age  </button>
+<!-- on click, changeTitle will be invoked from vue template (app.js) -->
+<div @click="changeTitle('Oath bringer')"> Change book title</div>
+<br>
+<!-- mouse events -->
+<div class="box" @mouseOver="handleEvent">mouseover (enter)</div>
+<!-- exit the mouse -->
+<div class="box"@mouseLeave="handleEvent"> mouseleave</div>
+<div class="box"@dblclick="handleEvent">double click</div>
+<div class="box"@mousemove="handleMouseMove"> position {{x}} {{y}}</div>
  </div>
     <!-- linking app.js to this html doc -->
     <script src="app.js"></script>

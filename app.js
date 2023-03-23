@@ -3,10 +3,50 @@
 // it's invoked with an object, inside it will handle any events the user makes e.g., button click or handles component template that will be rendered
 // this object represents a root component in view which in our case it is the "app" section of the webpage
  const app = Vue.createApp({
-    // this is rendered inside app div in index.html 
-    // template: '<h2> I am the template </h2>'
+// data function represents the application state
+// returns an object which is accessabile in vue
+   data() {
+    return {
+      showBooks: true, 
+       title: "The Final Empire",
+       author: "Brandon Sanderson",
+       age: 45,
+       x: 0,
+       y: 0,
+    }
+    
 
- })
+   },
+
+ // created component method by adding another property inside this component
+ // any methods we want to run inside this component, we place it below
+ // we must invoke the method
+ 
+      methods: {   
+// whenever the below function is called, it will update the following object 
+            changeTitle(title) {
+               //update the title
+               //this : references the component itself, then it searches through properties 
+               this.title = title    
+            },
+            toggleShowBooks() {
+               //this method is triggered by changing showbooks property to false once a user click on "hide books" button
+               // the "!" reverses the action
+               this.showBooks = !this.showBooks 
+            },
+            //when an event is triggered, the first paramter and by default is event or "e"
+            handleEvent(e) {
+               // console logs an event once the cursor is on the box/ double click inside the box/ cursor leaves the box
+               console.log(e, e.type)
+            },
+            handleMouseMove(e) {
+               this.x = e.offsetX
+               this.y = e.offsetY
+            }
+   
+      }
+   
+    })
 
 
 
