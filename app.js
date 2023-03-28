@@ -46,6 +46,10 @@
                // offset is the cursor position, taken from the event parameter 
                this.x = e.offsetX
                this.y = e.offsetY
+            },
+            toggleFav(book) {
+               book.isFav = !book.isFav
+
             }
    
       }
