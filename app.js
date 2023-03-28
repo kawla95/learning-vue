@@ -7,11 +7,12 @@
 // returns an object which is accessabile in vue
    data() {
     return {
+      url: 'http://www.netninja.dev',
       showBooks: true, 
      books: [
-      {title: 'name of the wind', author: 'patrick rothfuss'},
-      {title: 'the way of kings', author: 'brandon sanderson'},
-      {title: 'the final empire', author: 'brancdon sanderson'}
+      {title: 'Killing Hemingway', author: 'Brian Meeks', img:'assets/1.jpeg'},
+      {title: 'Harry Potter and the Cursed Child', author: 'J.K. Rowling ', img:'assets/2.jpeg'},
+      {title: 'The Mind of a Leader', author: 'Kevin Anderson', img:'assets/3.png'}
      ],
        x: 0,
        y: 0,

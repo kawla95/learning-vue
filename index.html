@@ -23,12 +23,16 @@
     <!-- mounting app in the dom inside the below element, hence, the id of app -->
     <!-- now our view app controls anything inside the below div -->
  <div id="app">
+    <!-- attribute binding: v-bind:then attach it to whatever attribute you want to bind data to. it makes it dynamic as we can access the diff properties inside our vue components then output its value-->
+    <!-- you can shortcut v-bind to ":" -->
+    <a :href="url">best website</a>
     <!-- conditional rendering below: only show book if vue condtional rendering is false -->
     <div v-if="showBooks">
         <!-- <p> {{ title }} - {{ author }} - {{ age }}</p> -->
         <ul>
             <!-- the first item can be called whatever, then the second item is the array name we will be cycling through -->
             <li v-for="book in books"> 
+                <img :src="book.img" :alt="book.title">
                 <h3> {{book.title}}</h3>
                 <p>{{book.author}}</p>
 
