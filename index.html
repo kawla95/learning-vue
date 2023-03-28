@@ -3,19 +3,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Learning Vue</title>
     <!-- importing vue v3.0.2 -->
     <script src="https://unpkg.com/vue@3.0.2"></script>
     <style>
-        .box {
-            /* 100 pixels top and bottom, 0 left and right */
-            padding: 100px 0; 
-            width: 400px; 
-            text-align: center;
-            background: #ddd;
-            margin: 20px; 
-            display: inline-block;
+        body{
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
         }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none; 
+            background: #fff;
+            margin: 20px auto; 
+            padding: 10px 20px; 
+            border-radius: 10px; 
+            display: flex; 
+            align-items: center;
+            justify-content: space-between; 
+        }
+        li.fav {
+            background: #ff9ed3;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -31,7 +46,8 @@
         <!-- <p> {{ title }} - {{ author }} - {{ age }}</p> -->
         <ul>
             <!-- the first item can be called whatever, then the second item is the array name we will be cycling through -->
-            <li v-for="book in books"> 
+            <!-- toggled a class via v-bind and passed an object. Class name is the key will only apply based on the value of the key. if it evaluates to true then the class condion will appear   -->
+            <li v-for="book in books" :class= "{fav: book.isFav}"> 
                 <img :src="book.img" :alt="book.title">
                 <h3> {{book.title}}</h3>
                 <p>{{book.author}}</p>

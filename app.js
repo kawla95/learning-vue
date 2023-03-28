@@ -10,9 +10,9 @@
       url: 'http://www.netninja.dev',
       showBooks: true, 
      books: [
-      {title: 'Killing Hemingway', author: 'Brian Meeks', img:'assets/1.jpeg'},
-      {title: 'Harry Potter and the Cursed Child', author: 'J.K. Rowling ', img:'assets/2.jpeg'},
-      {title: 'The Mind of a Leader', author: 'Kevin Anderson', img:'assets/3.png'}
+      {title: 'Killing Hemingway', author: 'Brian Meeks', img:'assets/1.jpeg', isFav: true },
+      {title: 'Harry Potter and the Cursed Child', author: 'J.K. Rowling ', img:'assets/2.jpeg', isFav: false},
+      {title: 'The Mind of a Leader', author: 'Kevin Anderson', img:'assets/3.png', isFav: true}
      ],
        x: 0,
        y: 0,
