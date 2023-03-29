@@ -47,12 +47,18 @@
                this.x = e.offsetX
                this.y = e.offsetY
             },
+            //on click fav book style that is true, changes to "false" style
             toggleFav(book) {
                book.isFav = !book.isFav
-
-            }
+            },
    
-      }
+      },
+           //computed properties depend on other data. When the other data changes, computed property will update 
+      computed: {
+            filteredBooks() {
+               return this.books.filter((book) => book.isFav)
+            }
+          }
    
     })
 

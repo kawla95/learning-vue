@@ -47,7 +47,7 @@
         <ul>
             <!-- the first item can be called whatever, then the second item is the array name we will be cycling through -->
             <!-- toggled a class via v-bind and passed an object. Class name is the key will only apply based on the value of the key. if it evaluates to true then the class condion will appear   -->
-            <li v-for="book in books" :class= "{fav: book.isFav}" @click="toggleFav(book)"> 
+            <li v-for="book in filteredBooks" :class= "{fav: book.isFav}" @click="toggleFav(book)"> 
                 <img :src="book.img" :alt="book.title">
                 <h3> {{book.title}}</h3>
                 <p>{{book.author}}</p>
